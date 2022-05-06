@@ -1,0 +1,26 @@
+version: "3.8"
+
+x-aws-loadbalancer: "arn:aws:elasticloadbalancing:us-west-2:877048740243:loadbalancer/app/auth/450268cab678f752"
+
+services:
+  fastapi:
+    image: harr1424/auth:FastAPI
+    x-aws-pull_credentials: "arn:aws:secretsmanager:us-west-2:877048740243:secret:dockerhubAccessToken-NbGTer"
+    build: FastAPI
+    ports:
+      - target: 5555
+        x-aws-protocol: http
+
+  nginx:
+    image: harr1424/auth:nginx
+    x-aws-pull_credentials: "arn:aws:secretsmanager:us-west-2:877048740243:secret:dockerhubAccessToken-NbGTer"
+    build: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - fastapi
+
+networks:
+  default:
+    external: true
+    name: sg-01af30133ec33c737

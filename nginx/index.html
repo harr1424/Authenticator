@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Authenticate</title>
+</head>
+<body>
+<div class="mx-auto" style="width: 600px;">
+<h1>Authenticate</h1>
+<form action="http://auth-852092430.us-west-2.elb.amazonaws.com:5555/authenticate/" method="post">
+    <div class="form-check-inline">
+        <label for="loginEmail" class="form-label">Email address</label>
+        <input name="username" type="email" required class="form-control" id="loginEmail" aria-describedby="emailHelp">
+        <div id="loginEmailHelp" class="form-text">Enter the email address you provided when registering for our service</div>
+    </div>
+    <div class="form-check-inline">
+        <label for="loginPassword" class="form-label">Password</label>
+        <input name="password" required type="password" class="form-control" id="loginPassword">
+    </div>
+    <button type="submit" class="btn btn-primary">Authenticate</button>
+</form>
+<br>
+<br>
+<h1>Register</h1>
+<form action="http://auth-852092430.us-west-2.elb.amazonaws.com:5555/register/" method="post">
+    <div class="form-check-inline">
+        <label for="registerEmail" class="form-label">Email address</label>
+        <input name="username" required type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp">
+        <div id="registerEmailHelp" class="form-text">Enter a unique email address you would like to use when authenticating</div>
+    </div>
+    <div class="form-check-inline">
+        <label for="registerPassword" class="form-label">Password</label>
+        <input name="password" required type="password" class="form-control" id="registerPassword">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
