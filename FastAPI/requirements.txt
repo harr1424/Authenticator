@@ -11,7 +11,7 @@ jmespath==1.0.0
 pydantic==1.10.13
 python-dateutil==2.8.2
 python-dotenv==0.19.2
-python-multipart==0.0.7
+python-multipart==0.0.18
 PyYAML==6.0
 s3transfer==0.5.2
 six==1.16.0
